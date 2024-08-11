@@ -16,4 +16,11 @@ defmodule ListAndRecursion do
   def my_max([head | tail], current_max) when head <= current_max, do: my_max(tail, current_max)
   # ListAndRecursion.max([2,3,9,7,4,3,1,1])
 
+  # -----ex ListsAndRecursion-3------
+  # An Elixir single-quoted string is actually a list of individual character codes.
+  # Write a caesar(list, n) function that adds n to each list element, wrapping if the addition results in a character greater than z.
+  def caesar([], _), do: []
+  def caesar([head | tail], n), do: [ ( rem((head-97+n),26) )+97 | caesar(tail, n)]
+  # ListAndRecursion.caesar('ryvkve', 13)
+
 end
