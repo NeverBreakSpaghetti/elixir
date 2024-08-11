@@ -23,4 +23,9 @@ defmodule ListAndRecursion do
   def caesar([head | tail], n), do: [ ( rem((head-97+n),26) )+97 | caesar(tail, n)]
   # ListAndRecursion.caesar('ryvkve', 13)
 
+  # -----ex ListsAndRecursion-4------
+  # Write a function MyList.span(from, to) that returns a list of the numbers from from up to to.
+  def span(from,to) when from > to, do: []
+  def span(from,to), do: [from | span(from+1, to)]
+  # ListAndRecursion.span(3, 13)
 end
