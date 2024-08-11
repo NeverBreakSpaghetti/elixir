@@ -60,9 +60,12 @@ defmodule Libraries do
   def get_cwd(), do: File.cwd()
 
   #Convert a string containing JSON into Elixir data structures. (Just find; don’t install.)
-
+  def convert_json_to_map(json_string) do
+    # TODO: use Jason
+  end
 
   #Execute a command in your operating system’s shell.
   def execute_shell_echo_command(message), do: System.shell("echo #{message}")
+  #I can also use System.cmd
 
 end
