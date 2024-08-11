@@ -7,4 +7,13 @@ defmodule ListAndRecursion do
   def mapsum([], _, sum), do: sum
   def mapsum([head | tail], function, sum), do: mapsum(tail, function, sum+function.(head))
 
+  # -----ex ListsAndRecursion-2------
+  # Write a max(list) that returns the element with the maximum value in the list. (This is slightly trickier than it sounds.)
+  def max([]), do: IO.puts("empty")
+  def max([head | tail]), do: my_max(tail, head)
+  def my_max([], current_max), do: current_max
+  def my_max([head | tail], current_max) when head > current_max, do: my_max(tail, head)
+  def my_max([head | tail], current_max) when head <= current_max, do: my_max(tail, current_max)
+  # ListAndRecursion.max([2,3,9,7,4,3,1,1])
+
 end
