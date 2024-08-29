@@ -50,4 +50,11 @@ defmodule ListAndRecursion do
   # ListAndRecursion.my_all?([1,2,3], &(&1<5))
   # ListAndRecursion.my_all?([1,2,3,10], &(&1<5))
   # ListAndRecursion.my_all?([10], &(&1<5))
+
+  def my_each([],_), do: :ok
+  def my_each([head | tail], function) do
+    function.(head)
+    my_each(tail, function)
+  end
+  # ListAndRecursion.my_each(["some", "example"], &(IO.puts(&1)))
 end
