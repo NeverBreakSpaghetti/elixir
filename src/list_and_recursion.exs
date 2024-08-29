@@ -28,4 +28,26 @@ defmodule ListAndRecursion do
   def span(from,to) when from > to, do: []
   def span(from,to), do: [from | span(from+1, to)]
   # ListAndRecursion.span(3, 13)
+
+  # -----ex ListsAndRecursion-5------
+  # Implement the following Enum functions using no library functions or list comprehensions: all?, each, filter, split, and take.
+  # You may need to use an if statement to implement filter. The syntax for this is
+  # if condition do
+  #    expression(s)
+  # else
+  #    expression(s)
+  # end
+  def my_all?([], _), do: true
+  # def my_all?([head | _tail], function) when function.(head) === false, do: false # error: invalid expression in guards, anonymous call is not allowed in guards.
+  # def my_all?([_ | tail], function), do: my_all?(tail, function)
+  def my_all?([head | tail], function) do
+    if function.(head) === false do
+      false
+    else
+      my_all?(tail, function)
+    end
+  end
+  # ListAndRecursion.my_all?([1,2,3], &(&1<5))
+  # ListAndRecursion.my_all?([1,2,3,10], &(&1<5))
+  # ListAndRecursion.my_all?([10], &(&1<5))
 end
