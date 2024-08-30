@@ -57,4 +57,14 @@ defmodule ListAndRecursion do
     my_each(tail, function)
   end
   # ListAndRecursion.my_each(["some", "example"], &(IO.puts(&1)))
+
+  def my_filter([],_), do: []
+  def my_filter([head | tail], function) do
+    if function.(head) === true do
+      [head | my_filter(tail, function)]
+    else
+      my_filter(tail, function)
+    end
+  end
+  # ListAndRecursion.my_filter(["apple", "pear", "banana", "melon"], &(String.contains?(&1, "a")))
 end
