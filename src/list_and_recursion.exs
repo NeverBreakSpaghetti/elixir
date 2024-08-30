@@ -67,4 +67,19 @@ defmodule ListAndRecursion do
     end
   end
   # ListAndRecursion.my_filter(["apple", "pear", "banana", "melon"], &(String.contains?(&1, "a")))
+
+  def my_split([],_), do: []
+  def my_split(list, count) when count>=0, do: [less_or_equal_then(list, count, 1), grater_then(list, count, 1)]
+  def my_split(list, count) when count<0, do: [less_or_equal_then(list, length(list)+count, 1), grater_then(list, length(list)+count, 1)]
+  def less_or_equal_then(_, count, element_number) when element_number>count, do: []
+  def less_or_equal_then([], _, _), do: []
+  def less_or_equal_then([head | tail], count, element_number), do: [head | less_or_equal_then(tail, count, element_number+1)]
+  def grater_then([], _, _), do: []
+  def grater_then([_head | tail], count, element_number) when element_number <= count, do: grater_then(tail, count, element_number+1)
+  def grater_then([head | tail], count, element_number) when element_number > count, do: [head | grater_then(tail, count, element_number+1)]
+  # ListAndRecursion.my_split([1, 2, 3], 2)
+  # ListAndRecursion.my_split([1, 2, 3], 10)
+  # ListAndRecursion.my_split([1, 2, 3], 0)
+  # ListAndRecursion.my_split([1, 2, 3], -1)
+  # ListAndRecursion.my_split([1, 2, 3], -5)
 end
