@@ -96,11 +96,7 @@ defmodule ListAndRecursion do
   # ListAndRecursion.my_take([1, 2, 3], -1)
 
   def my_flatten([]), do: []
-  def my_flatten(list), do: my_flatten_helper(list)
-  def my_flatten_helper([]), do: []
-  def my_flatten_helper([head | tail]) when is_list(head) do
-    my_flatten_helper(head) ++ my_flatten_helper(tail)
-  end
-  def my_flatten_helper([head | tail]), do: [head | my_flatten_helper(tail)]
+  def my_flatten([head | tail]) when is_list(head), do: my_flatten(head) ++ my_flatten(tail)
+  def my_flatten([head | tail]), do: [head | my_flatten(tail)]
   # ListAndRecursion.my_flatten([ 1, [ 2, 3, [4] ], 5, [[[6]]]])
 end
