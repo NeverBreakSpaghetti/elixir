@@ -82,4 +82,16 @@ defmodule ListAndRecursion do
   # ListAndRecursion.my_split([1, 2, 3], 0)
   # ListAndRecursion.my_split([1, 2, 3], -1)
   # ListAndRecursion.my_split([1, 2, 3], -5)
+
+  def my_take([], _), do: []
+  def my_take(_, 0), do: []
+#  def my_take(list, amount) when length(list)<abs(amount), do: Enum.reverse(my_take(Enum.reverse(list),abs(amount))) # Damn, I can not use library functions
+  def my_take([head | tail], amount) when amount>0, do: [head | my_take(tail, amount-1)]
+  def my_take(list, amount) when amount<0, do: my_take(list, abs(amount), length(list)+amount)
+  def my_take([_head | tail], amount, skip) when skip>0, do: my_take(tail, amount, skip-1)
+  def my_take(list, amount, skip) when skip===0, do: my_take(list, amount) # Could remove when condition
+  # ListAndRecursion.my_take([1, 2, 3], 2)
+  # ListAndRecursion.my_take([1, 2, 3], 10)
+  # ListAndRecursion.my_take([1, 2, 3], 0)
+  # ListAndRecursion.my_take([1, 2, 3], -1)
 end
