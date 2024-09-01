@@ -25,4 +25,16 @@ defmodule FunctionsTest do
     end
   end
 
+  describe "Functions-3" do
+    test "complete_fizz_buzz" do
+      assert complete_fizz_buzz(10) === "Buzz"
+      assert complete_fizz_buzz(11) === 11
+      assert complete_fizz_buzz(12) === "Fizz"
+      assert complete_fizz_buzz(13) === 13
+      assert complete_fizz_buzz(14) === 14
+      assert complete_fizz_buzz(15) === "FizzBuzz"
+      assert complete_fizz_buzz(16) === 16
+    end
+  end
+
 end
