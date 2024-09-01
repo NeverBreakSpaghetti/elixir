@@ -22,20 +22,20 @@ end
 # -----ex modulesAndFunctions-6------
 # Chop.guess(273, 1..1000)
 defmodule Chop do
-  def guess(guess, _.._) when is_integer(guess) === false, do: IO.puts("only integers are accepted")
-  def guess(guess, min..max) when (guess in min..max) === false, do: IO.puts("#{guess} not in range")
-  def guess(guess, min..max) when guess in min..max do
+  def guess(guess, _.._//_step) when is_integer(guess) === false, do: IO.puts("only integers are accepted")
+  def guess(guess, min..max//1) when (guess in min..max//1) === false, do: IO.puts("#{guess} not in range")
+  def guess(guess, min..max//1) when guess in min..max//1 do
     c = div(max+min,2)
     IO.puts("is it #{c}")
     guess(guess, min..max, div(max+min,2))
   end
-  def guess(guess, _.._, center) when guess === center, do: IO.puts("#{guess}")
-  def guess(guess, min.._, center) when guess <= center do
+  def guess(guess, _.._//_step, center) when guess === center, do: IO.puts("#{guess}")
+  def guess(guess, min.._//_step, center) when guess <= center do
     c = div(center+min,2)
     IO.puts("is it #{c}")
     guess(guess, min..center, c)
   end
-  def guess(guess, _..max, center) when guess > center do
+  def guess(guess, _..max//_step, center) when guess > center do
     c = div(max+center,2)
     IO.puts("is it #{c}")
     guess(guess, center..max, c)
