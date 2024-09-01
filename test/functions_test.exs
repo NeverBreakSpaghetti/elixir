@@ -37,4 +37,13 @@ defmodule FunctionsTest do
     end
   end
 
+  describe "Functions-4" do
+    test "prefix" do
+      assert prefix("Elixir").("Rocks") === "Elixir Rocks"
+      assert prefix("Mrs").("Smith") === "Mrs Smith"
+      mrs = prefix("Mrs")
+      assert mrs.("Smith") === "Mrs Smith"
+    end
+  end
+
 end

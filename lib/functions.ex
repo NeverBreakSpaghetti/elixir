@@ -23,4 +23,8 @@ defmodule Functions do
     complete_fizz_buzz_function.(input)
   end
 
+  def prefix(prefix) do
+    fn string -> "#{prefix} #{string}" end
+  end
+
 end
