@@ -27,4 +27,12 @@ defmodule Functions do
     fn string -> "#{prefix} #{string}" end
   end
 
+  def map_and_notation(list) do
+    Enum.map list, &(&1 + 2)
+  end
+
+  def each_and_notation(list) do
+    Enum.each list, &(IO.inspect &1)
+  end
+
 end

@@ -46,4 +46,16 @@ defmodule FunctionsTest do
     end
   end
 
+  describe "Functions-5" do
+    test "map_and_notation" do
+      expected_result = Enum.map [1,2,3,4], fn x -> x+2 end
+      assert map_and_notation([1,2,3,4]) === expected_result
+    end
+
+    test "each_and_notation" do
+      expected_result = Enum.each [1,2,3,4], fn x -> x*3 end
+      assert each_and_notation([1,2,3,4]) === expected_result
+    end
+  end
+
 end
