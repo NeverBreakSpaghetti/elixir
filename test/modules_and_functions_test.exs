@@ -21,4 +21,13 @@ defmodule ModulesAndFunctionsTest do
     end
   end
 
+  describe "ModulesAndFunctions-5" do
+    test "gdc" do
+      assert Gdc.of(2,0) === 2
+      assert Gdc.of(2,3) === 1
+      assert Gdc.of(3,9) === 3
+      assert Gdc.of(9,3) === 3
+    end
+  end
+
 end
