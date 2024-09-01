@@ -3,9 +3,9 @@ defmodule Functions.MixProject do
 
   def project do
     [
-      app: :recursionex,
+      app: :elixir,
       version: "0.1.0",
-      elixir: "~> 1.16.2",
+      elixir: "~> 1.17.2",
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]
