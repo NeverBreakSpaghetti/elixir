@@ -14,4 +14,11 @@ defmodule ModulesAndFunctionsTest do
     end
   end
 
+  describe "ModulesAndFunctions-4" do
+    test "sum" do
+      assert Sum.of(1) === 1
+      assert Sum.of(5) === 15 #without import
+    end
+  end
+
 end
