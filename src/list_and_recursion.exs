@@ -40,13 +40,14 @@ defmodule ListAndRecursion do
   def my_all?([], _), do: true
   # def my_all?([head | _tail], function) when function.(head) === false, do: false # error: invalid expression in guards, anonymous call is not allowed in guards.
   # def my_all?([_ | tail], function), do: my_all?(tail, function)
-  def my_all?([head | tail], function) do
-    if function.(head) === false do
-      false
-    else
-      my_all?(tail, function)
-    end
-  end
+#  def my_all?([head | tail], function) do
+#    if function.(head) === false do
+#      false
+#    else
+#      my_all?(tail, function)
+#    end
+#  end
+  def my_all?([head | tail], function), do: function.(head) and my_all?(tail, function)
   # ListAndRecursion.my_all?([1,2,3], &(&1<5))
   # ListAndRecursion.my_all?([1,2,3,10], &(&1<5))
   # ListAndRecursion.my_all?([10], &(&1<5))
