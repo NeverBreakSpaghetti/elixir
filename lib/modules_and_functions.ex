@@ -25,6 +25,11 @@ defmodule Gdc do
 end
 
 # -----ex modulesAndFunctions-6------
+#I’m thinking of a number between 1 and 1000....
+#The most efficient way to find the number is to guess halfway between the low and high numbers of the range.
+#If our guess is too big, then the answer lies between the bottom of the range and one less than our guess.
+#If our guess is too small, then the answer lies between one more than our guess and the end of the range.
+#Your API will be guess(actual, range), where range is an Elixir range. Your output should look similar to this:
 # Chop.guess(273, 1..1000)
 defmodule Chop do
   def guess(guess, _.._//_step) when is_integer(guess) === false, do: IO.puts("only integers are accepted")
