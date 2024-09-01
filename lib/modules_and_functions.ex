@@ -1,6 +1,8 @@
 defmodule Times do
   def double(n), do: n * 2
+  # -----ex modulesAndFunctions-1------
   def triple(n), do: n * 3
+  # -----ex modulesAndFunctions-3------
   def quadruple(n), do: double(double(n))
 end
 
@@ -60,7 +62,7 @@ defmodule Libraries do
   def get_cwd(), do: File.cwd()
 
   #Convert a string containing JSON into Elixir data structures. (Just find; don’t install.)
-  def convert_json_to_map(json_string) do
+  def convert_json_to_map(_json_string) do
     # TODO: use Jason
   end
 
