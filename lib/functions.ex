@@ -6,4 +6,14 @@ defmodule Functions do
 
   def pair_tuple_to_list({a,b}), do: [a,b]
 
+  def fizz_buzz(input) do
+    fizz_buzz_function = fn
+      {0, 0, _} -> "FizzBuzz"
+      {0, _, _} -> "Fizz"
+      {_, 0, _} -> "Buzz"
+      {_, _, c} -> c
+    end
+    fizz_buzz_function.(input)
+  end
+
 end

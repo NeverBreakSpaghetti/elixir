@@ -16,4 +16,13 @@ defmodule FunctionsTest do
     end
   end
 
+  describe "Functions-2" do
+    test "fizz_buzz" do
+      assert fizz_buzz({0,0,3}) === "FizzBuzz"
+      assert fizz_buzz({0,1,3}) === "Fizz"
+      assert fizz_buzz({1,0,3}) === "Buzz"
+      assert fizz_buzz({1,2,3}) === 3
+    end
+  end
+
 end
