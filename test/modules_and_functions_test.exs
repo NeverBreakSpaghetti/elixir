@@ -57,6 +57,10 @@ defmodule ModulesAndFunctionsTest do
     test "get_extension" do
       assert MyLibraries.get_extension("dave/test.exs") === ".exs"
     end
+
+    test "get_cwd" do
+      assert MyLibraries.get_cwd() === File.cwd()
+    end
   end
 
 end
