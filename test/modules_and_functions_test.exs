@@ -53,6 +53,10 @@ defmodule ModulesAndFunctionsTest do
     test "get_env_variable" do
       assert MyLibraries.get_env_variable("HOME") === System.user_home()
     end
+
+    test "get_extension" do
+      assert MyLibraries.get_extension("dave/test.exs") === ".exs"
+    end
   end
 
 end
