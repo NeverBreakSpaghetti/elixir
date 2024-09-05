@@ -49,6 +49,10 @@ defmodule ModulesAndFunctionsTest do
     test "float_to_string" do
       assert MyLibraries.float_to_string(1.987) === "1.00"
     end
+
+    test "get_env_variable" do
+      assert MyLibraries.get_env_variable("HOME") === System.user_home()
+    end
   end
 
 end
