@@ -55,7 +55,7 @@ end
 # -----ex modulesAndFunctions-6------
 #Find the library functions to do the following, and then use each in IEx.
 #(If the word Elixir or Erlang appears at the end of the challenge, then you’ll find the answer in that set of libraries.)
-defmodule Libraries do
+defmodule MyLibraries do
   #Convert a float to a string with two decimal digits. (Erlang)
   def float_to_string(float) when is_float(float), do: :io.format("~.2f", [float])
   #def floatToString(float) when is_float(float), do: :erlang.float_to_binary(float, decimals: 2)

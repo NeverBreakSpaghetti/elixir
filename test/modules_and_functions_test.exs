@@ -44,4 +44,11 @@ defmodule ModulesAndFunctionsTest do
 #    assert called IO.puts "273"
 #  end
 
+  describe "ModulesAndFunctions-7" do
+    #Convert a float to a string with two decimal digits. (Erlang)
+    test "float_to_string" do
+      assert MyLibraries.float_to_string(1.987) === "1.00"
+    end
+  end
+
 end
