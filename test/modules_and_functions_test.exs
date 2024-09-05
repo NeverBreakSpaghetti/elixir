@@ -61,6 +61,10 @@ defmodule ModulesAndFunctionsTest do
     test "get_cwd" do
       assert MyLibraries.get_cwd() === File.cwd()
     end
+
+    test "execute_shell_echo_command" do
+      assert MyLibraries.execute_shell_echo_command("Hello") === {"Hello\n", 0}
+    end
   end
 
 end
